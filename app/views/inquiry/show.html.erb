@@ -1,0 +1,27 @@
+<section class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 bg-light" >
+            問合せページサンプル
+            <%= form_tag "confirm", method:"post" do %>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <!--<input type="email" class="form-control" name="mailSendTo" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" data-required-error="E-Mailは必須です" required>-->
+                    <%= text_field_tag("mailSendTo", "", :type => "email", :class=>"form-control", :id=>"exampleInputEmail1", :"aria-describedby"=>"emailHelp", :placeholder=>"Enter email", :"data-required-error"=>"E-Mailは必須です", :required=>"required" ) %>
+                </div>
+                <div class="form-group">
+                    <label for="InputGuestNmae">お名前</label>"
+                    <!--<input type="text" class="form-control" name="guestName" id="InputGuestNmae" placeholder="お名前" data-required-error="名前の入力は必須です" required>-->
+                    <%= text_field_tag("guestName", "", :type => "text", :class=>"form-control", :id=>"InputGuestNmae", :"aria-describedby"=>"emailHelp", :placeholder=>"お名前", :"data-required-error"=>"名前の入力は必須です", :required=>"required" ) %>
+                </div>
+                <div class="form-group">
+                    <label for="InputContent">お問合せ内容</label>
+                    <!--<textarea class="form-control" id="InputContent" placeholder="お問合せ内容を記入ください" rows="6" name="content" required></textarea>-->
+                    <%= text_area("content", "", :class=>"form-control",:id=>"InputContent",:placeholder=>"お問合せ内容を記入ください", :rows=>"6",:required=>"required") %>
+                </div>
+                <br>
+                <!--<button type="submit" class="btn btn-primary">Submit</button>-->
+                <%= submit_tag "送信", :class => "btn btn-primary" %>
+            <% end %>
+        </div>
+    </div>
+</section>

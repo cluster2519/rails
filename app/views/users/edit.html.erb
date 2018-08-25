@@ -1,0 +1,43 @@
+<script>
+    $(function(){
+      initialize();
+      codeAddress()
+      // alert("map情報の読み込み");
+    });
+</script>
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-md-8 offset-md-3 bg-light" >
+      <%= form_for @user do |f| %>
+        <p>
+        <%= f.label(:name, "名前") %>
+        <%= f.text_field :name %>
+        </p>
+        <p>
+        <%= f.label :yomi, "ヨミガナ" %>
+        <%= f.text_field :yomi %>
+        </p>
+        <p>
+        <%= f.label :phone, "電話番号" %>
+        <%= f.text_field :phone %>
+        </p>
+        <p>
+        <%= f.label :email, "Email" %>
+        <%= f.text_field :email %>
+        </p>
+        <p>
+        <%= f.label :postalcode, "郵便番号" %>
+        <%= f.text_field :postalcode %>
+        </p>
+        <p>
+        <%= f.label :address, "住所" %>
+        <%= f.text_field :address, :id => "address" %>
+        <input type="button" value="住所検索" onclick="codeAddress()">
+        <div id="map_canvas" style="width:500px; height:300px"></div>
+        </p>
+        <%= f.submit "登録" %>
+        <%= link_to "戻る", users_path %>  
+      <% end %>
+      </div>
+  </div>
+</section>

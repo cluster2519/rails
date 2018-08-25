@@ -1,0 +1,24 @@
+<section class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form action="sendmail" method="post">
+                <h5>以下の内容で内容で送信します</h5>
+                <br>
+                <div class="alert alert-info" role="alert">
+                    メールアドレス：<%= @mailSendTo %>
+                </div>
+                <input type="hidden" name="mailSendTo" value=<%= @mailSendTo %>>
+                <div class="alert alert-info" role="alert">
+                    氏名：<%= @guestname %>
+                </div>
+                <input type="hidden" name="guestName" value=<%= @guestname %>>
+                <div class="alert alert-info" role="alert">
+                    お問合せ内容：<%= @content %>
+                </div>
+                <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                <br>
+                <button type="submit" class="btn btn-primary">確認</button>
+            </form>
+        </div>
+    </div>
+</section>

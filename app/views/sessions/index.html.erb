@@ -1,0 +1,18 @@
+
+<section class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 bg-light" >
+            <h3>ログイン画面</h3>
+            <br>
+            <%= form_tag url: users_path =%>
+            名前:<%= text_field_tag :name %>
+            パスワード:<%= password_field_tag :password %>
+            <br>
+            <br>
+            <br>
+            <%= submit_tag 'ログイン',:class => "btn btn-primary" %>
+            <br>
+            <%= @notice %>
+        </div>
+    </div>
+</section>

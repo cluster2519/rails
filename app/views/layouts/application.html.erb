@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>タイトル名</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!--
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>タイトル</title>
+    -->
+
+    <!-- BootstrapのCSS読み込み -->
+    <!--<link href="/assets/bootstrap/bootstrap.min.css" rel="stylesheet">-->
+    <!-- jQuery読み込み -->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+    <!-- BootstrapのJS読み込み -->
+    <!--<script src="/assets/bootstrap.min.js"></script>-->
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script src="/assets/map.js"></script>
+    
+    <script>
+        $(function(){
+          // initialize();
+          // alert("map情報の読み込み");
+        });
+    </script>
+
+    <style>
+    .offset-md-3{
+      /*width:750px;*/
+      padding:20px;border-color:whitesmoke;border-width:5px 5px 5px 5px;border-style:solid;background:#FFFFFF;
+      /*height: 620px;*/
+      margin:0px;margin-left : auto ; margin-right : auto ;
+      box-shadow: 10px 10px 10px rgba(0,0,0,0.4);								/* ボックスの影 */
+      /*text-align:center;*/
+      border-radius: 5px;
+      behavior: url(js/PIE.htc);	
+    }
+    </style>
+    </head>
+    <div class="sticky-top py-1 d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 border-bottom box-shadow" style="background-color:lavenderblush" >
+    <!--<h5 class="my-0 mr-md-auto font-weight-normal">Company name</h5>-->
+    <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="/inquiry/show">お問合せ</a>
+        <a class="p-2 text-dark" href="/hospital/show">メイン</a>
+        <a class="p-2 text-dark" href="/users">ユーザ一覧</a>
+    </nav>
+    <!--<a class="btn btn-outline-primary" href="#">Sign Out</a> -->
+    <%= link_to "Log Out",  :sessions_logout, class: "btn btn-outline-primary" %>
+    <div>(ユーザー名：<%= session[:staff_name] %>)</div>
+  </div>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
